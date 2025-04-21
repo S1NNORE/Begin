@@ -1,4 +1,4 @@
-name: Python CI/CD
+name: Python CI
 
 on:
   push:
@@ -17,8 +17,9 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install pytest
-        run: pip install pytest
+      - name: Install dependencies (optional)
+        run: |
+          pip install pytest
 
       - name: Run tests
-        run: pytest devops/test_main.py
+        run: pytest tests/
